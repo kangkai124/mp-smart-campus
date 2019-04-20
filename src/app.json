@@ -1,8 +1,14 @@
 {
+  "cloud": true,
   "pages": [
+    "pages/mine/main",
+    "pages/life/main",
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/classroom/main",
+    "pages/classTable/main",
+    "pages/repair/main",
+    "pages/pays/main",
+    "pages/publish/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,27 +23,21 @@
     "borderStyle": "white",
 
     "list": [{
-      "text": "首页",
+      "text": "学习",
       "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
+      "iconPath": "static/tabs/room.png",
+      "selectedIconPath": "static/tabs/room-active.png"
     }, {
-      "text": "订单",
-      "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
-    }],
-
-    "items": [{
-      "name": "首页",
-      "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "text": "生活",
+      "pagePath": "pages/life/main",
+      "iconPath": "static/tabs/book.png",
+      "selectedIconPath": "static/tabs/book-active.png"
+    },
+    {
+      "text": "我的",
+      "pagePath": "pages/mine/main",
+      "iconPath": "static/tabs/me.png",
+      "selectedIconPath": "static/tabs/me-active.png"
     }],
     "position": "bottom"
   }

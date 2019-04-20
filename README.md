@@ -1,4 +1,4 @@
-# mpweixin
+# smart-campus
 
 > A Mpvue project
 

@@ -1,16 +1,18 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
-	},
+		"newFeature": true,
+		"autoAudits": false
+  },
+  "cloudfunctionRoot": "cloudFn/",
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
-	"projectname": "mpweixin",
+	"appid": "wx87c7ceefa3da1b60",
+	"projectname": "smart-campus",
 	"condition": {
 		"search": {
 			"current": -1,

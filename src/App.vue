@@ -31,6 +31,13 @@ export default {
 </script>
 
 <style>
+html, body {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+
+}
 .container {
   height: 100%;
   display: flex;
