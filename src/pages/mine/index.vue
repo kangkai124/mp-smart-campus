@@ -91,8 +91,8 @@ export default {
   text-align: center;
 
   .user {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     padding: 4px;
     position: relative;
     background: #ebebeb;

@@ -8,7 +8,8 @@
         circular="circular">
         <div :key="i" v-for="(item, i) in list">
           <swiper-item>
-            {{ item }}
+            <h2>{{ item.title }}</h2>
+            <img :src="item.fileID" alt="cover">
           </swiper-item>
         </div>
       </swiper>
@@ -17,11 +18,19 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      list: [1, 2, 3]
-    })
+const db = wx.cloud.database()
+
+export default {
+  data: () => ({
+    list: []
+  }),
+  onShow () {
+    db.collection('activities').get()
+      .then(res => {
+        this.list = res.data.slice(-3)
+      })
   }
+}
 </script>
 
 <style>
