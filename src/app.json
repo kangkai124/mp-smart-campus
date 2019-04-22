@@ -8,12 +8,15 @@
     "pages/classTable/main",
     "pages/repair/main",
     "pages/pays/main",
+    "pages/lifeItem/main",
+    "pages/payHistory/main",
+    "pages/repairHistory/main",
     "pages/publish/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "轻院智慧校园",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

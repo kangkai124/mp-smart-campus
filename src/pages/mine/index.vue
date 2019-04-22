@@ -20,7 +20,7 @@
           <Year />
         </div>
         <div class="operator">
-          <div class="item" v-for="item in list" :key="item.id">
+          <div class="item" v-for="item in list" :key="item.id" @click="onClick(item.id)">
             <button>{{ item.name }}</button>
           </div>
         </div>
@@ -57,6 +57,11 @@ export default {
   mounted () {
     this.checkLogin()
   },
+  onHide () {
+    this.title = ''
+    this.content = ''
+    this.cover = ''
+  },
   methods: {
     getUserInfo (e) {
       if (e.target && e.target.userInfo) {
@@ -75,6 +80,13 @@ export default {
     },
     publish () {
       wx.navigateTo({ url: '/pages/publish/main' })
+    },
+    onClick (id) {
+      if (id === 1) {
+        wx.navigateTo({ url: '/pages/pays/main' })
+      } else {
+        wx.navigateTo({ url: '/pages/repair/main' })
+      }
     }
   }
 }

@@ -1,10 +1,16 @@
 <template>
   <div class="publish">
     <div class="title">
-      活动标题：<input v-model="title" />
+      <h5>
+        活动标题：
+      </h5>
+      <input v-model="title" />
     </div>
     <div class="content">
-      活动详情：<textarea v-model="content" />
+      <h5>
+        活动详情：
+      </h5>
+      <textarea v-model="content" />
     </div>
     <div class="cover">
       <button size="mini" @click="uploadCover">上传活动封面</button>
@@ -87,9 +93,17 @@ export default {
               showSuccess('活动发布成功')
               setTimeout(() => {
                 wx.switchTab({ url: '/pages/life/main' })
+              }, 300)
+              setTimeout(() => {
+                this.clear()
               }, 500)
             })
         })
+    },
+    clear () {
+      this.title = ''
+      this.content = ''
+      this.cover = ''
     }
   }
 }
@@ -99,13 +113,30 @@ export default {
 .publish {
   font-size: 14px;
   text-align: center;
+  width: 90vw;
+  margin: 0 auto;
+}
+input {
+  height: 40px;
 }
 input, textarea {
+  width: 100%;
   border: 1px solid #999;
+  border-radius: 6px;
+  margin: 0 auto;
 }
 .tip {
   text-align: center;
   font-size: 12px;
   color: #999;
+}
+h5 {
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.cover {
+  margin: 10px auto;
 }
 </style>

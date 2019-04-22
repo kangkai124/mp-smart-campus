@@ -33,10 +33,10 @@ export default {
 <style>
 html, body {
   height: 100%;
+  box-sizing: border-box;
 }
 * {
-  box-sizing: border-box;
-
+  box-sizing: inherit;
 }
 .container {
   height: 100%;
