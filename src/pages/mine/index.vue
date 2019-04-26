@@ -43,7 +43,7 @@ export default {
     list: [
       {
         id: 1,
-        name: '缴纳水电费',
+        name: '充值水电费',
         to: '/pages/pays/main'
       },
       {
@@ -67,6 +67,13 @@ export default {
       if (e.target && e.target.userInfo) {
         const userInfo = e.target.userInfo
         wx.setStorageSync('user', JSON.stringify(userInfo))
+        wx.cloud.callFunction({
+          name: 'login'
+        })
+          .then(res => {
+            const openid = res.result.openid
+            wx.setStorageSync('openid', openid)
+          })
         showSuccess('登录成功')
         this.checkLogin()
       } else {

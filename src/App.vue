@@ -1,6 +1,7 @@
 <script>
 export default {
   created () {
+    this.$expectoPatronum()
     // 调用API从本地缓存中获取数据
     /*
      * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
@@ -34,9 +35,6 @@ export default {
 html, body {
   height: 100%;
   box-sizing: border-box;
-}
-* {
-  box-sizing: inherit;
 }
 .container {
   height: 100%;

@@ -1,9 +1,9 @@
 {
   "cloud": true,
   "pages": [
+    "pages/index/main",
     "pages/mine/main",
     "pages/life/main",
-    "pages/index/main",
     "pages/classroom/main",
     "pages/classTable/main",
     "pages/repair/main",

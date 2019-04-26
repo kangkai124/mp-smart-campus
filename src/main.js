@@ -9,5 +9,32 @@ wx.cloud.init({
   traceUser: true
 })
 
+Vue.prototype.$expectoPatronum = () => {
+  console.log(`
+      Expecto Patronum!!
+
+       ┌─┐       ┌─┐
+    ┌──┘ ┴───────┘ ┴──┐
+    │                 │
+    │       ───       │
+    │  ─┬┘       └┬─  │
+    │                 │
+    │       ─┴─       │
+    │                 │
+    └───┐         ┌───┘
+        │         │
+        │         │
+        │         │
+        │         └──────────────┐
+        │                        │
+        │                        ├─┐
+        │                        ┌─┘
+        │                        │
+        └─┐  ┐  ┌───────┬──┐  ┌──┘
+          │ ─┤ ─┤       │ ─┤ ─┤
+          └──┴──┘       └──┴──┘
+  `)
+}
+
 const app = new Vue(App)
 app.$mount()

@@ -24,6 +24,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "dayjs": "^1.8.12",
     "less-loader": "^4.1.0",
     "mpvue": "^2.0.0",
     "vue-tiny-rate": "^0.2.0",

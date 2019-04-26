@@ -31,6 +31,11 @@ export default {
     history () {
       wx.navigateTo({ url: '/pages/payHistory/main' })
     },
+    clear () {
+      this.cardId = ''
+      this.money = ''
+      this.index = 0
+    },
     pay () {
       if (!this.cardId) {
         showFail('请输入卡号')
@@ -44,7 +49,8 @@ export default {
         data: {
           type: this.index,
           cardId: this.cardId,
-          money: this.money
+          money: this.money,
+          date: new Date().valueOf()
         }
       })
         .then(res => {
@@ -53,6 +59,7 @@ export default {
             wx.navigateBack({
               delta: 1 // 返回的页面数，如果 delta 大于现有页面数，则返回到首页,
             })
+            this.clear()
           }, 300)
         })
         .catch(() => {
