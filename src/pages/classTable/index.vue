@@ -1,8 +1,8 @@
 <template>
   <div class="class-table">
-    <div class="select">
-      选择课表
-    </div>
+    <picker @change="onChange" :value="index" :range="range" range-key="name">
+      <h5>学期: <span>{{ range[index].name }}</span></h5>
+    </picker>
     <div class="top">
       <div class="week" v-for="(week, i) in weeks" :key="i">
         周{{ week }}
@@ -40,34 +40,30 @@
 </template>
 
 <script>
+import wlists from './tables'
 
 export default {
   data () {
     return {
+      index: 0,
+      range: wlists,
       weeks: ['一', '二', '三', '四', '五', '六', '日'],
       times: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-      colors: ['#85B8CF', '#90C652', '#e2a02e', '#FC9F9D', '#0A9A84', '#61BC69', '#12AEF3', '#E29AAD'],
-      wlist: [
-        { 'week': 1, 'beginTime': 1, 'length': 2, 'name': '高等数学@教A-301' },
-        { 'week': 1, 'beginTime': 5, 'length': 3, 'name': '线性代数@教A-301' },
-        { 'week': 2, 'beginTime': 1, 'length': 2, 'name': '物理@教A-301' },
-        { 'week': 2, 'beginTime': 8, 'length': 2, 'name': '计算机导论@教A-301' },
-        { 'week': 3, 'beginTime': 3, 'length': 2, 'name': '高等数学@教A-301' },
-        { 'week': 3, 'beginTime': 5, 'length': 2, 'name': '数据分析@教A-301' },
-        { 'week': 3, 'beginTime': 8, 'length': 3, 'name': '体育@教A-301' },
-        { 'week': 4, 'beginTime': 2, 'length': 3, 'name': '高等数学@教A-301' },
-        { 'week': 4, 'beginTime': 8, 'length': 2, 'name': '高等数学@教A-301' },
-        { 'week': 5, 'beginTime': 1, 'length': 2, 'name': '高等数学@教A-301' },
-        { 'week': 6, 'beginTime': 3, 'length': 2, 'name': '高等数学@教A-301' },
-        { 'week': 7, 'beginTime': 5, 'length': 3, 'name': '高等数学@教A-301' }
-      ]
+      colors: ['#85B8CF', '#90C652', '#e2a02e', '#FC9F9D', '#0A9A84', '#61BC69', '#12AEF3', '#E29AAD']
     }
   },
   mounted () {
 
   },
+  computed: {
+    wlist () {
+      return this.range[this.index].wlist
+    }
+  },
   methods: {
-
+    onChange (e) {
+      this.index = Number(e.target.value)
+    }
   }
 }
 </script>
@@ -80,9 +76,14 @@ export default {
   }
 }
 
-.select {
-  height: 6vh;
-}
+// .select {
+//   height: 6vh;
+//   // line-height: 6vh;
+
+//   b {
+//     color: #69c969;
+//   }
+// }
 .scroll {
   height: 84vh;
 }
@@ -130,9 +131,18 @@ export default {
   width: 88rpx;
   position: absolute;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+h5 {
+  font-size: 14px;
+  height: 6vh;
+  line-height: 6vh;
+
+  span {
+    color:rgb(136, 200, 171);
+  }
 }
 </style>

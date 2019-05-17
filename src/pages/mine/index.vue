@@ -25,7 +25,7 @@
           </div>
         </div>
         <!-- <div class="line"></div> -->
-        <div class="item admin">
+        <div class="item admin" v-if="isAdmin">
           <button @click="publish">发布活动</button>
         </div>
     </div>
@@ -36,9 +36,12 @@
 import { showSuccess, showFail } from '@/utils'
 import Year from '@/components/year'
 
+const db = wx.cloud.database()
+
 export default {
   data: () => ({
     showLogin: true,
+    isAdmin: false,
     userInfo: {},
     list: [
       {
@@ -73,6 +76,7 @@ export default {
           .then(res => {
             const openid = res.result.openid
             wx.setStorageSync('openid', openid)
+            this.checkAdmin()
           })
         showSuccess('登录成功')
         this.checkLogin()
@@ -84,6 +88,18 @@ export default {
       const res = wx.getStorageSync('user')
       this.showLogin = !res
       if (res) this.userInfo = JSON.parse(res)
+      this.checkAdmin()
+    },
+    checkAdmin () {
+      this.openid = wx.getStorageSync('openid')
+      if (this.openid) {
+        db.collection('admin').where({ admin_id: this.openid }).get()
+          .then(res => {
+            if (res.data.length > 0) {
+              this.isAdmin = true
+            }
+          })
+      }
     },
     publish () {
       wx.navigateTo({ url: '/pages/publish/main' })
