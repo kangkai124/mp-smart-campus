@@ -13,6 +13,7 @@
     "pages/repairHistory/main",
     "pages/library/main",
     "pages/notebook/main",
+    "pages/noteHistory/main",
     "pages/detail/main",
     "pages/publish/main"
   ],

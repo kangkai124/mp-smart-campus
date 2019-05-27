@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="col"><div class="btn" @click="bindClassroom">教室查询</div></div>
+    <div class="col"><div class="btn" @click="bindClassroom">请假审批</div></div>
     <div class="col"><div class="btn btn2" @click="bindClassTable">课表查询</div></div>
     <div class="col"><div class="btn btn3" @click="bindLibrary">好书推荐</div></div>
     <div class="col"><div class="btn btn4" @click="bindNotebook">云记事本</div></div>

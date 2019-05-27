@@ -1,5 +1,8 @@
 <template>
   <div class="class-table">
+    <picker @change="onChange2" :value="index2" :range="range2">
+      <h5>学院: <span>{{ range2[index2] }}</span></h5>
+    </picker>
     <picker @change="onChange" :value="index" :range="range" range-key="name">
       <h5>学期: <span>{{ range[index].name }}</span></h5>
     </picker>
@@ -46,7 +49,9 @@ export default {
   data () {
     return {
       index: 0,
+      index2: 0,
       range: wlists,
+      range2: ['国际学院', '信息学院', '经管学院'],
       weeks: ['一', '二', '三', '四', '五', '六', '日'],
       times: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       colors: ['#85B8CF', '#90C652', '#e2a02e', '#FC9F9D', '#0A9A84', '#61BC69', '#12AEF3', '#E29AAD']
@@ -63,6 +68,9 @@ export default {
   methods: {
     onChange (e) {
       this.index = Number(e.target.value)
+    },
+    onChange2 (e) {
+      this.index2 = Number(e.target.value)
     }
   }
 }
@@ -85,7 +93,7 @@ export default {
 //   }
 // }
 .scroll {
-  height: 84vh;
+  height: 80vh;
 }
 
 .top {

@@ -7,12 +7,14 @@
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false
-  },
-  "cloudfunctionRoot": "cloudFn/",
+	},
+	"cloudfunctionRoot": "cloudFn/",
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wx87c7ceefa3da1b60",
 	"projectname": "smart-campus",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
